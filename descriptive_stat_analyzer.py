@@ -29,8 +29,8 @@ if __name__ == "__main__":
     )
     time_col_name = "event_time"
 
-    # Load validated data
-    ts = load_validated_data(time_col_name, data_col_name, app_conf)
+    # Load deduplicated data
+    ts = load_deduplicated_data(time_col_name, data_col_name, app_conf)
 
     # Analyze descriptive statistics
     report: AnalysisReport = analyze_descriptive_stat(ts, time_col_name, data_col_name)

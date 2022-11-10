@@ -13,7 +13,7 @@ import logging
 __all__ = [
     "get_conf_from_evn",
     "parse_spark_extra_conf",
-    "load_validated_data",
+    "load_deduplicated_data",
     "analyze_descriptive_stat",
     "save_report_stat_to_dwh",
 ]
@@ -70,7 +70,7 @@ def parse_spark_extra_conf(app_conf):
     return config_dict
 
 
-def load_validated_data(time_col_name: str, data_col_name: str, app_conf) -> DataFrame:
+def load_deduplicated_data(time_col_name: str, data_col_name: str, app_conf) -> DataFrame:
     """
 
     :param time_col_name:
