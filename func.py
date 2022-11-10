@@ -118,7 +118,7 @@ def save_report_stat_to_dwh(
 ):
 
     # todo: transaction
-    table_name = "cleaned_descriptive_stats"
+    table_name = "cleaned_descriptive_stat_estimates"
     SparkSession.getActiveSession().sql(
         f"CREATE TABLE IF NOT EXISTS {table_name} (sample_start TIMESTAMP, sample_end TIMESTAMP, max DOUBLE, min DOUBLE, count INT, mean DOUBLE, median DOUBLE, Q1 DOUBLE, Q3 DOUBLE, stddev DOUBLE, skewness DOUBLE, kurtosis DOUBLE, mode DOUBLE, cv DOUBLE) PARTITIONED BY (feature_id CHAR(10)) STORED AS PARQUET"
     )
